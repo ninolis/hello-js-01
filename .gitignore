@@ -102,4 +102,4 @@ dist
 
 # TernJS port file
 .tern-port
-js/theory-autochecking.js
+// js/theory-autochecking.js
