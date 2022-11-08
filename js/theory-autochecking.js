@@ -499,22 +499,476 @@ console.log( calculateTotalPrice(12, 70)); // returns 840
 // JS V2 block-1 Autochecking  ASSIGNMENT 12/36  Status: Done
 
 /*
+TASK: ORDERING PRODUCT 2.0
+The makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee) function composes and returns a repair droid purchase message. It declares three parameters, the values ​​of which will be set during its call.
+
+orderedQuantity - number of droids in the order
+pricePerDroid - price per droid
+deliveryFee - delivery fee
+Modify the function code so that it returns an order message in the format "You ordered droids worth <total price> credits. Delivery (<delivery fee> credits) is included in total price.". Don't forget about the delivery fee when calculating the total price.
+
+The function makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee) is declared
+The call makeOrderMessage(2, 100, 50) returns "You ordered droids worth 250 credits. Delivery (50 credits) is included in total price."
+The call makeOrderMessage(4, 300, 100) returns "You ordered droids worth 1300 credits. Delivery (100 credits) is included in total price."
+The call makeOrderMessage(10, 70, 200) returns "You ordered droids worth 900 credits. Delivery (200 credits) is included in total price."
+ */
+
+// Javascript Editor:
+/*
+
+function makeOrderMessage(orderedQuantity, pricePerDroid, deliveryFee) {
+  // Change code below this line
+
+const message = `You ordered droids worth ${pricePerDroid * orderedQuantity + deliveryFee} credits. Delivery (${deliveryFee} credits) is included in total price.`;
+// You ordered droids worth 900 credits. Delivery (200 credits) is included in total price.
+
+  // Change code above this line
+  return message;
+}
+
+makeOrderMessage(2, 100, 50);
+makeOrderMessage(4, 300, 100);
+makeOrderMessage(10, 70, 200);
+
+console.log( makeOrderMessage(2, 100, 50));
+// returns "You ordered droids worth 250 credits. Delivery (50 credits) is included in total price."
+
+console.log( makeOrderMessage(4, 300, 100));
+// returns "You ordered droids worth 1300 credits. Delivery (100 credits) is included in total price."
+
+console.log( makeOrderMessage(10, 70, 200));
+// returns "You ordered droids worth 900 credits. Delivery (200 credits) is included in total price."
+
+*/
+
+/////////////////////////////////////////////////////////////
+// JS V2 block-1 Autochecking  ASSIGNMENT 13/36  Status: Done
+
+/*
+COMPARISON OPERATORS >, >=, < AND <=
+Comparison operators are used to compare two values. The result of their execution returns a boolean - true or false, that is, "yes" or "no".
+
+> - more
+< - less
+>= - greater than or equal
+<= - less or equal
+const a = 2;
+const b = 5;
+
+console.log(a > b); // false
+console.log(b > a); // true
+console.log(a >= b); // false
+console.log(b >= a); // true
+
+console.log(a < b); // true
+console.log(b < a); // false
+console.log(a <= b); // true
+console.log(b <= a); // false
+The isAdult function declares one age parameter, the value of which will be set when it is called. Set the variable passed to an expression for checking the age of the user. A person is considered an adult at the age of 18 or over.
+
+The isAdult(age) function is declared
+The test expression uses the >= operator
+The call isAdult(20) returns true
+The call isAdult(14) returns false
+The call isAdult(8) returns false
+The call isAdult(37) returns true
+ */
+
+// Javascript Editor:
+/*
+
+function isAdult(age) {
+  // Change code below this line
+  const passed = age >= 18;
+
+  // Change code above this line
+  return passed;
+}
+
+isAdult(20); // returns true
+isAdult(14); // returns false
+isAdult(8); // returns false
+isAdult(37); // returns true
+
+console.log(isAdult(20)); // returns true
+console.log(isAdult(14)); // returns false
+console.log(isAdult(8)); // returns false
+console.log(isAdult(37)); // returns true
+
+*/
+
+///////////////////////////////////////////////
+// JS V2 block-1 Autochecking  ASSIGNMENT 14/36  Status: Done
+
+/*
+COMPARISON OPERATORS === AND !==
+The "loose" operators == and != perform type conversion of compared values, which can lead to errors, especially for beginners.
+
+// ❌ Bad, type casting is in progress
+console.log(5 == "5"); // true
+console.log(5 != "5"); // false
+console.log(1 == true); // true
+console.log(1 != true); // false
+Therefore, to test for equality or inequality of two values, the operators === (strict equality) and !== (strict inequality) are used, which do not cast the types of the operands.
+
+// ✅ Good, no casting is done
+console.log(5 === "5"); // false
+console.log(5 === 5); // true
+console.log(5 !== "5"); // true
+console.log(5 !== 5); // false
+console.log(1 === true); // false
+console.log(1 !== true); // true
+The isValidPassword(password) function checks the equality of the stored and entered passwords and returns the result of the check - boolean true or false. The variable SAVED_PASSWORD stores the value of the previously saved password. The entered password is passed to the password parameter.
+
+Assign to the variable isMatch an expression for checking the equality of the previously entered and saved passwords. The result of the test expression must be true if the values ​​match, and false if not.
+
+The function isValidPassword(password) is declared
+The operator === is used in the password test expression
+The call isValidPassword("mangodab3st") returns false
+The call isValidPassword("kiwirul3z") returns false
+The call isValidPassword("jqueryismyjam") returns true
+ */
+
+// Javascript Editor:
+/*
+
+function isValidPassword(password) {
+  const SAVED_PASSWORD = 'jqueryismyjam';
+  // Change code below this line
+  const isMatch = SAVED_PASSWORD === password;
+
+  // Change code above this line
+  return isMatch;
+}
+
+isValidPassword("mangodab3st"); // returns false
+isValidPassword("kiwirul3z"); // returns false
+isValidPassword("jqueryismyjam"); // returns true
+
+console.log( isValidPassword("mangodab3st")); // returns false
+console.log( isValidPassword("kiwirul3z")); // returns false
+console.log( isValidPassword("jqueryismyjam")); // returns true
+
+*/
+
+///////////////////////////////////////////////
+// JS V2 block-1 Autochecking  ASSIGNMENT 15/36  Status: Done
+
+/*
+STATEMENT IF...ELSE
+Branches are used to execute different code depending on the condition. The principle of operation is simple - the result of the expression in the condition of the if block is converted to the boolean true or false.
+
+if (condition) {
+  // body if
+} else {
+  // body else
+}
+If the condition is converted to true, then the code in curly braces of the if body is executed, and the else block is ignored.
+
+let cost;
+const subscription = "pro";
+
+if (subscription === "pro") {
+  cost = 100;
+} else {
+  cost = 0;
+}
+
+console.log(cost); // 100
+If the condition is converted to false, the code of the if block will be skipped, and the code in curly braces after the else block will be executed.
+
+let cost;
+const subscription = "free";
+
+if (subscription === "pro") {
+  cost = 100;
+} else {
+  cost = 0;
+}
+
+console.log(cost); // 0
+Add the expression for checking the age of the user, the value of the age parameter, to the condition for the if statement.
+
+If the user is an adult, the if block should be executed and the string "You are an adult" is written to the message variable.
+Otherwise, the else block must be executed and the line "You are a minor" is written.
+The function checkAge(age) is declared
+The >= operator is used in the age test expression
+The call checkAge(20) returns "You are an adult"
+The call checkAge(8) returns "You are a minor"
+The call checkAge(14) returns "You are a minor"
+The call checkAge(38) returns "You are an adult"
+ */
+
+// Javascript Editor:
+/*
+
+function checkAge(age) {
+  let message;
+
+  if (age >= 18) { // Change this line
+    message = 'You are an adult';
+  } else {
+    message = 'You are a minor';
+  }
+
+  return message;
+}
+
+checkAge(20); // returns "You are an adult"
+checkAge(8); // returns "You are a minor"
+checkAge(14); // returns "You are a minor"
+checkAge(38); // returns "You are an adult"
+
+console.log(checkAge(20)); // returns "You are an adult"
+console.log(checkAge(8)); // returns "You are a minor"
+console.log(checkAge(14)); // returns "You are a minor"
+console.log(checkAge(38)); // returns "You are an adult"
+
+*/
+
+///////////////////////////////////////////////
+// JS V2 block-1 Autochecking  ASSIGNMENT 16/36  Status: Done
+
+/*
+TASK: GOODS WAREHOUSE
+The checkStorage(available, ordered) function checks the order capability and returns a result message. It declares two parameters, the values ​​of which will be set during its call:
+
+available - the total number of products in the warehouse
+ordered - units of goods in the order
+Using branches, modify the function code so that:
+
+If the order contains a number exceeding the number of goods in stock, the string "Not enough goods in stock!" Is written to the message variable.
+Otherwise, the string "Order is processed, our manager will contact you." is written.
+The function checkStorage(available, ordered) is declared.
+The call checkStorage(100, 50) returns "Order is processed, our manager will contact you."
+The call checkStorage(100, 130) returns "Not enough goods in stock!"
+The call checkStorage(200, 20) returns "Order is processed, our manager will contact you."
+The call checkStorage(200, 150) returns "Order is processed, our manager will contact you."
+The call checkStorage(150, 180) returns "Not enough goods in stock!"
+ */
+
+// Javascript Editor:
+// start
+/*
+
+function checkStorage(available, ordered) {
+  let message;
+  // Change code below this line
+
+  // Change code above this line
+  return message;
+}
+
+
+*/
+
+// Javascript Editor:
+// done
+/*
+
+function checkStorage(available, ordered) {
+  let message;
+  // Change code below this line
+  if (available >= ordered) {
+      message = 'Order is processed, our manager will contact you.';
+    } else {
+      message = 'Not enough goods in stock!';
+    }
+  // Change code above this line
+  return message;
+}
+
+checkStorage(100, 50); // returns "Order is processed, our manager will contact you."
+checkStorage(100, 130); // returns "Not enough goods in stock!"
+checkStorage(200, 20); // returns "Order is processed, our manager will contact you."
+checkStorage(200, 150); // returns "Order is processed, our manager will contact you."
+checkStorage(150, 180); // returns "Not enough goods in stock!"
+
+console.log(checkStorage(100, 50)); // returns "Order is processed, our manager will contact you."
+console.log(checkStorage(100, 130)); // returns "Not enough goods in stock!"
+console.log(checkStorage(200, 20)); // returns "Order is processed, our manager will contact you."
+console.log(checkStorage(200, 150)); // returns "Order is processed, our manager will contact you."
+console.log(checkStorage(150, 180)); // returns "Not enough goods in stock!"
+
+*/
+
+///////////////////////////////////////////////
+// JS V2 block-1 Autochecking  ASSIGNMENT 17/36  Status: Done
+
+/*
+COMBINED ASSIGNMENT OPERATORS
+Combined operators are a shorter way of assigning a new value to a variable based on its previous value.
+
+We will increase the value of the age variable by one from the previous value, simulating updating the age after the user's birthday.
+
+let age = 25;
+// Classic notation
+age = age + 1;
+console.log(age); // 26
+The right side of the expression is executed first. Instead of age, 25 is substituted, the addition operation is performed, and 26 is written to the variable age
+
+Let's refactor the age update operation using the combined assignment operator with addition.
+
+let age = 25;
+// Just shorter notation, works the same
+age += 1;
+console.log(age); // 26
+Replace the expression with the standard math operators with the combined assignment operator with addition, subtraction, multiplication, and division.
+
+The value of the variable a is equal to 7
+Operator += used
+The value of the variable b is equal to 6
+Operator -= used
+The value of the variable c is equal to 45
+Operator *= used
+The value of the variable d is equal to 2
+Operator /= used
+ */
+
+// Javascript Editor:
+// start
+/*
+let a = 5;
+let b = 10;
+let c = 15;
+let d = 20;
+
+// Change code below this line
+a = a + 2;
+b = b - 4;
+c = c * 3;
+d = d / 10;
+
+*/
+
+// Javascript Editor:
+// done
+/*
+
+let a = 5;
+let b = 10;
+let c = 15;
+let d = 20;
+
+// Change code below this line
+a += 2;
+b -= 4;
+c *= 3;
+d /= 10;
+
+console.log(a); // returns 7
+console.log(b); // returns 6
+console.log(c); // returns 45
+console.log(d); // returns 2
+
+
+a += 2;
+b -= 4;
+c *= 3;
+d /= 10;
+
+// This time:
+console.log(a); // returns 9
+console.log(b); // returns 2
+console.log(c); // returns 135
+console.log(d); // returns 0.2
+
+*/
+
+///////////////////////////////////////////////
+// JS V2 block-1 Autochecking  ASSIGNMENT 18/36  Status: Done
+
+/*
+TASK: BALANCE CHECKING
+The repair droid sales station is ready, all that remains is to write the software for the sales department.
+
+The makeTransaction(pricePerDroid, orderedQuantity, customerCredits) function executes the transaction for the sale of droids and returns a message about the result of the operation. It declares three parameters, the values ​​of which will be set during its call:
+
+pricePerDroid - price per droid
+orderedQuantity - number of ordered droids
+customerCredits - amount of funds on the customer's account
+Add the following functionality to it:
+
+Declare the variable totalPrice to store the total amount of the order and assign it an expression for calculating this amount.
+Add a check to find out if the client can pay for the order:
+if the amount to be paid exceeds the number of credits on the client's account, write the string "Insufficient funds!" to the message variable;
+otherwise, subtract the purchase cost from the client's account and write a message to the message variable: "You ordered <number> droids, you have <number> credits left".
+The function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) is declared
+The call makeTransaction(3000, 5, 23000) returns "You ordered 5 droids, you have 8000 credits left"
+The call makeTransaction(1000, 3, 15000) returns "You ordered 3 droids, you have 12000 credits left"
+The call makeTransaction(5000, 10, 8000) returns "Insufficient funds!"
+The call makeTransaction(2000, 8, 10000) returns "Insufficient funds!"
+The call makeTransaction(500, 10, 5000) returns "You ordered 10 droids, you have 0 credits left"
+ */
+
+// Javascript Editor:
+// start
+/*
+function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
+  let message;
+  // Change code below this line
+
+  // Change code above this line
+  return message;
+}
+*/
+
+// Javascript Editor:
+// done
+/*
+
+function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
+  let message;
+  // Change code below this line
+  const totalPrice = pricePerDroid * orderedQuantity;
+  // if (customerCredits >= totalPrice) {
+  //   message = `You ordered ${orderedQuantity} droids, you have ${
+  //     customerCredits - totalPrice
+  //   } credits left`;
+  // } else {
+  //   message = 'Insufficient funds!';
+  // }
+
+  if (totalPrice > customerCredits) {
+    message = 'Insufficient funds!';
+  } else {
+    message = `You ordered ${orderedQuantity} droids, you have ${
+      customerCredits - totalPrice
+    } credits left`;
+  }
+  // Change code above this line
+  return message;
+}
+
+makeTransaction(3000, 5, 23000); // returns "You ordered 5 droids, you have 8000 credits left"
+makeTransaction(1000, 3, 15000); // returns "You ordered 3 droids, you have 12000 credits left"
+makeTransaction(5000, 10, 8000); // returns "Insufficient funds!"
+makeTransaction(2000, 8, 10000); // returns "Insufficient funds!"
+makeTransaction(500, 10, 5000); // returns "You ordered 10 droids, you have 0 credits left"
+
+console.log(makeTransaction(3000, 5, 23000)); // returns "You ordered 5 droids, you have 8000 credits left"
+console.log(makeTransaction(1000, 3, 15000)); // returns "You ordered 3 droids, you have 12000 credits left"
+console.log(makeTransaction(5000, 10, 8000)); // returns "Insufficient funds!"
+console.log(makeTransaction(2000, 8, 10000)); // returns "Insufficient funds!"
+console.log(makeTransaction(500, 10, 5000)); // returns "You ordered 10 droids, you have 0 credits left"
+
+*/
+
+///////////////////////////////////////////////
+// JS V2 block-1 Autochecking  ASSIGNMENT 19/36  Status: Done
+
+/*
 
  */
 
 // Javascript Editor:
+// start
 /*
 
 */
 
-//////////////////////////////////
-// JS V2 block-1 Autochecking  ASSIGNMENT 13/36  Status: Done
-
-/*
-
- */
-
 // Javascript Editor:
+// done
 /*
 
 */
