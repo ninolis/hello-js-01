@@ -1,4 +1,0 @@
-https://githowto.com/uk
-
-українська та англійська
-how to work with git
