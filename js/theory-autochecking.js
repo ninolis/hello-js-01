@@ -1029,9 +1029,9 @@ function checkPassword(password) {
   let message;
 
   if (password === null) { 
-        message =  'Canceled by user!';
+    message =  'Canceled by user!';
   } else if (password === ADMIN_PASSWORD) { 
-        message = 'Welcome!';
+    message = 'Welcome!';
   } else {
     message = 'Access denied, wrong password!';
   }
