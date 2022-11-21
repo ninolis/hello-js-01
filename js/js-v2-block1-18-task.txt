@@ -1,0 +1,18 @@
+  // Change code below this line
+  const totalPrice = pricePerDroid * orderedQuantity;
+
+  if (totalPrice > customerCredits) {
+    message = 'Insufficient funds!';
+  } else {
+    message = `You ordered ${orderedQuantity} droids, you have 
+    ${customerCredits - totalPrice} credits left`;
+  }
+  // Change code above this line
+  
+  
+  
+1. Не треба знову оголошувати змінну message. Тому що це будуть інші змінні, тобто у тебе три різні змінні з однаковою назвою. Перша змінна на всю функцію, а друга і третя діють тільки в межах своїх {}.
+2. https://textbook.edu.goit.global/javascript-yk5evp/v2/uk/docs/lesson-01/strings/#шаблонні-рядки
+
+шаблонні рядки, які використовують backtick (`) characters зворотні лапки (на клавіатурі з самого верху зліва, разом з тільдою ~
+
